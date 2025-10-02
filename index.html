@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Img/anillos.png" type="image/x-icon">
+    <title>Valeria & José - Invitación de Boda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="CSS/Estilos.css">
+     <link rel="stylesheet" href="CSS/Musica.css">
+</head>
+
+<body> 
+
+  <div id="loader">
+    <img src="Img/Valjesusn.png" alt="Cargando...">
+  </div>
+
+
+<div id="content" class="container hidden">
+        <div id="invitation-card" class="section">
+            <i class="fas fa-heart section-icon"></i>
+            <h2>¡Nos Casamos!</h2>
+            <h1 class="names flex justify-center flex-wrap items-center gap-2 text-3xl md:text-4xl lg:text-5xl font-bold">
+  Titai Valeria & José de Jesús
+</h1>
+<br>
+            <p class="date">08 de Noviembre de 2025</p>
+           <div class="mx-auto max-w-3xl px-4 md:px-8">
+    <p class="invitation-text mt-8 text-justify text-gray-700 leading-relaxed">
+        Con gran alegría y amor, los invitamos a compartir con nosotros el día en que uniremos nuestras vidas
+        en matrimonio. Su presencia hará de este día un momento aún más especial.
+    </p>
+</div>
+
+            <div id="countdown">
+                <span id="days" data-label="Días">00</span>
+                <span>:</span>
+                <span id="hours" data-label="Horas">00</span>
+                <span>:</span>
+                <span id="minutes" data-label="Minutos">00</span>
+                <span>:</span>
+                <span id="seconds" data-label="Segundos">00</span>
+            </div>
+            <p id="message" class="mt-4 text-lg font-semibold text-gray-400"></p>
+        </div>
+
+        <div id="parents-sponsors-section" class="section">
+            <i class="fa fa-users"></i>
+            <h2>Nuestros Padres y Padrinos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div>
+                    <h3>Padres de la Novia</h3>
+                    <p>Sra. Paulina Barrera Romero y Sr. Jesus Barrera Cruz</p>
+                </div>
+                <div>
+                    <h3>Padres del Novio</h3>
+                    <p>Sra. Angelina Saucedo Mendieta y Sr. Tomas Cozatl Ramírez</p>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3>Padrinos</h3>
+                <p>Sra. Anabell Cozatl Ramírez y Sr. Moisés Hernandez Chavarria </p>
+            </div>
+        </div>
+
+     <div id="itinerary-section" class="section">
+    <i class="fas fa-calendar-alt section-icon"></i>
+    <h2>Itinerario</h2>
+    
+    <div class="itinerary-item">
+        <i class="fas fa-church"></i>
+        <div class="itinerary-content">
+            <h3>Ceremonia Religiosa</h3>
+            <p><strong>13:00 hrs</strong></p>
+            <p>Parroquia La Trinidad Sanctorum</p>
+            <a href="https://maps.app.goo.gl/R488o5ppeUHgjo3E6" target="_blank" rel="noopener noreferrer">Ver en el mapa</a>
+        </div>
+    </div>
+    
+    <div class="itinerary-item">
+        <i class="fas fa-balance-scale"></i> 
+        <div class="itinerary-content">
+            <h3>Ceremonia Civil</h3>
+            <p><strong>14:00 hrs</strong></p> 
+            <p>Salón Jardín Las Mariposas (Mismo lugar de la Recepción)</p>
+            <a href="https://maps.app.goo.gl/uUFXrygYUSgDgJEz6" target="_blank" rel="noopener noreferrer">Ver en el mapa</a>
+        </div>
+    </div>
+    
+    <div class="itinerary-item">
+        <i class="fas fa-glass-cheers"></i>
+        <div class="itinerary-content">
+            <h3>Recepción</h3>
+            <p><strong>15:00 hrs</strong></p>
+            <p>Salón Jardín Las Mariposas</p>
+            <a href="https://maps.app.goo.gl/uUFXrygYUSgDgJEz6" target="_blank" rel="noopener noreferrer">Ver en el mapa</a>
+        </div>
+    </div>
+</div>
+
+   <div id="video-section" class="section">
+    <i class="fas fa-video section-icon photos"></i>
+    <h2 class="video-text">Nuestra Historia en Video</h2>
+  <p class="video-description text-justify px-4 md:px-12">
+    Un recuerdo de los momentos que nos unieron y el día que nuestra historia de amor dio un gran paso.
+</p>
+
+    <div class="video-container">
+        <video id="video-boda" muted playsinline preload="auto" loop autoplay>
+            <source src="https://res.cloudinary.com/dbwuz0iw8/video/upload/Val_jose_vk7cee.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </div>
+
+    <!-- Frase de Bad Bunny -->
+    <p id="quote-container" class="quote-container">
+        “Mientras uno está vivo, uno debe amar lo más que pueda.” – Bad Bunny
+    </p>
+</div>
+
+
+
+        <div id="photos-section" class="section">
+            <i class="fas fa-camera-retro section-icon photos"></i>
+            <h2>Nuestra Galería</h2>
+            <div class="photo-grid">
+                <div class="photo-item"><img src="Img/foto1.jpg" alt="Foto 1"></div>
+                <div class="photo-item"><img src="Img/foto2.jpg" alt="Foto 2"></div>
+                <div class="photo-item"><img src="Img/foto3.jpg" alt="Foto 3"></div>
+                <div class="photo-item"><img src="Img/foto4.jpg" alt="Foto 4"></div>
+                <div class="photo-item"><img src="Img/foto5.jpg" alt="Foto 5"></div>
+                <div class="photo-item"><img src="Img/foto6.jpg" alt="Foto 6"></div>
+                <div class="photo-item"><img src="Img/foto7.jpg" alt="Foto 7"></div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close cursor-pointer">×</span>
+            <div class="modal-content-container">
+                <img class="modal-content" id="modal-img">
+                <a class="prev" id="prevBtn">❮</a>
+                <a class="next" id="nextBtn">❯</a>
+            </div>
+        </div>
+        
+<div id="video-section-main-presentation" class="section video-section-main">
+  <div class="video-main-container">
+    <iframe src="https://player.cloudinary.com/embed/?cloud_name=dbwuz0iw8&public_id=JoseVAL_nknml7&profile=cld-default&controls=false&autoplay=true&muted=true&loop=true&playsinline=true" 
+      frameborder="0" 
+      allow="autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+<div id="dedicatorias" class="section bg-gradient-to-b from-[#0d1a26] to-[#1a2a3a] py-16 text-center">
+  <div class="flex flex-col items-center mb-12">
+    <i class="fas fa-heart text-5xl text-[#b0c4de] mb-4 animate-pulse"></i>
+    <h2 class="text-4xl font-bold text-[#b0c4de] mb-2">Deja tu Mensaje</h2>
+    <br>
+    <p class="text-[#c9d6e4] text-justify px-4 md:px-12">
+      Comparte tus buenos deseos y dedicatorias para los novios. ¡Se verán en tiempo real en nuestro muro!
+    </p>
+  </div>
+
+  <form id="form-dedicatorias" class="relative max-w-xl mx-auto bg-[#1a2a3a] p-8 rounded-3xl shadow-2xl space-y-4 border border-[#b0c4de]/20">
+    <input type="text" id="nombre" placeholder="Tu nombre" required
+      class="w-full px-5 py-3 rounded-xl bg-[#ffffff] text-black placeholder-[#8c9cb6] border border-[#b0c4de]/30 focus:outline-none focus:ring-2 focus:ring-[#b0c4de]">
+    <textarea id="mensaje" placeholder="Escribe tu mensaje" rows="3" required
+      class="w-full px-5 py-3 rounded-xl bg-[#ffffff] text-black placeholder-[#8c9cb6] border border-[#b0c4de]/30 focus:outline-none focus:ring-2 focus:ring-[#b0c4de] resize-none"></textarea>
+    <button type="submit"
+      class="w-full bg-[#b0c4de] text-[#0d1a26] py-3 rounded-xl font-bold text-lg shadow-lg hover:bg-[#c0d0e0] transition-all duration-300 transform hover:scale-105">
+      Enviar Mensaje
+    </button>
+  </form>
+
+  <div id="lista-dedicatorias" class="flex overflow-x-auto space-x-6 px-6 py-12 mt-12 scrollbar-hide"></div>
+</div>
+
+<script>
+const form = document.getElementById('form-dedicatorias');
+const lista = document.getElementById('lista-dedicatorias');
+const API_URL = 'https://sheetdb.io/api/v1/qe0emre9epqit';
+
+
+async function cargarMensajes() {
+  try {
+    const res = await fetch(API_URL);
+    const mensajes = await res.json();
+    lista.innerHTML = mensajes.map(msg => `
+      <div class="card">
+        <p class="mensaje">“${msg.mensaje}”</p>
+        <p class="font-bold text-[#b0c4de]">${msg.nombre}</p>
+      </div>
+    `).join('');
+  } catch (err) {
+    console.error('Error al cargar mensajes:', err);
+    lista.innerHTML = '<p class="text-[#c9d6e4]">No se pudieron cargar los mensajes.</p>';
+  }
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const nombre = document.getElementById('nombre').value.trim();
+  const mensaje = document.getElementById('mensaje').value.trim();
+  if (!nombre || !mensaje) return;
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: { nombre, mensaje, fecha: new Date().toISOString() } })
+    });
+    if (res.ok) {
+      form.reset();
+      cargarMensajes(); 
+    } else {
+      alert('Hubo un error al enviar tu mensaje.');
+    }
+  } catch (err) {
+    console.error('Error al enviar mensaje:', err);
+    alert('No se pudo conectar con la base de datos.');
+  }
+});
+
+document.addEventListener('DOMContentLoaded', cargarMensajes);
+</script>
+
+
+<div id="asistencia" class="section text-center py-12">
+  <i class="fas fa-check-circle section-icon" style="color:#b0c4de;"></i>
+  <h2 class="text-3xl font-bold mb-6" style="color:#b0c4de;">Confirmar Asistencia</h2>
+
+  <a href="https://wa.me/522227105021?text=Hola%20Valeria%20y%20José,%20confirmo%20mi%20asistencia%20a%20su%20boda%20🎉💍"
+     target="_blank"
+     class="inline-block px-10 py-4 rounded-full font-semibold text-lg shadow-md transform transition duration-300"
+     style="background-color:#b0c4de; color:#0d1a26;"
+  >
+     Confirmar por WhatsApp
+  </a>
+</div>
+
+
+<div id="audio-ring-control" class="floating-ring">
+    <div id="ring-container">
+        <i id="btn-audio-flotante" class="fas fa-music"></i>
+    </div>
+</div>
+<audio id="musicaFondo" src="https://res.cloudinary.com/dbwuz0iw8/video/upload/v1759368750/Morat_-_A_D%C3%B3nde_Vamos_Letra_Albert_Maricheli_btwy84.mp3" loop preload="auto"></audio>
+
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2025 Valeria & José</p>
+        <p>Creado con ❤️ para un día inolvidable</p>
+    </div>
+</footer>
+
+
+</div>
+
+
+
+</body>
+</html>
+
+
+        <script src="JS/script.js"></script>
+         <script src="JS/mensajes.js"></script>
+         <script src="JS/Musica.js"></script>
+</body>
+</html>
