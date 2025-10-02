@@ -115,7 +115,6 @@
         </video>
     </div>
 
-    <!-- Frase de Bad Bunny -->
     <p id="quote-container" class="quote-container">
         “Mientras uno está vivo, uno debe amar lo más que pueda.” – Bad Bunny
     </p>
@@ -179,55 +178,6 @@
   <div id="lista-dedicatorias" class="flex overflow-x-auto space-x-6 px-6 py-12 mt-12 scrollbar-hide"></div>
 </div>
 
-<script>
-const form = document.getElementById('form-dedicatorias');
-const lista = document.getElementById('lista-dedicatorias');
-const API_URL = 'https://sheetdb.io/api/v1/qe0emre9epqit';
-
-
-async function cargarMensajes() {
-  try {
-    const res = await fetch(API_URL);
-    const mensajes = await res.json();
-    lista.innerHTML = mensajes.map(msg => `
-      <div class="card">
-        <p class="mensaje">“${msg.mensaje}”</p>
-        <p class="font-bold text-[#b0c4de]">${msg.nombre}</p>
-      </div>
-    `).join('');
-  } catch (err) {
-    console.error('Error al cargar mensajes:', err);
-    lista.innerHTML = '<p class="text-[#c9d6e4]">No se pudieron cargar los mensajes.</p>';
-  }
-}
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const nombre = document.getElementById('nombre').value.trim();
-  const mensaje = document.getElementById('mensaje').value.trim();
-  if (!nombre || !mensaje) return;
-
-  try {
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ data: { nombre, mensaje, fecha: new Date().toISOString() } })
-    });
-    if (res.ok) {
-      form.reset();
-      cargarMensajes(); 
-    } else {
-      alert('Hubo un error al enviar tu mensaje.');
-    }
-  } catch (err) {
-    console.error('Error al enviar mensaje:', err);
-    alert('No se pudo conectar con la base de datos.');
-  }
-});
-
-document.addEventListener('DOMContentLoaded', cargarMensajes);
-</script>
-
 
 <div id="asistencia" class="section text-center py-12">
   <i class="fas fa-check-circle section-icon" style="color:#b0c4de;"></i>
@@ -260,12 +210,6 @@ document.addEventListener('DOMContentLoaded', cargarMensajes);
 
 
 </div>
-
-
-
-</body>
-</html>
-
 
         <script src="JS/script.js"></script>
          <script src="JS/mensajes.js"></script>
