@@ -17,9 +17,17 @@ async function cargarMensajes() {
       card.style.borderRadius = "12px";
       card.style.padding = "12px";
       card.style.flexShrink = "0";
+
+      const textoFormateado = msg.Mensaje
+        .split(/\n+/)
+        .map(p => `<p>${p.trim()}</p>`)
+        .join('') || `<p>${msg.Mensaje}</p>`;
+
       card.innerHTML = `
-        <p style="color:#c9d6e4; font-style:italic; margin-bottom:6px;">“${msg.Mensaje}”</p>
-        <p style="font-weight:bold; color:white;">- ${msg.Nombre}</p>
+        <div style="color:#c9d6e4; font-style:italic; margin-bottom:6px; overflow-wrap: break-word;">
+          ${textoFormateado}
+        </div>
+        <p style="font-weight:bold; color:white; margin-top:4px;">- ${msg.Nombre}</p>
       `;
       lista.appendChild(card);
     });
@@ -56,9 +64,17 @@ form.addEventListener('submit', async (e) => {
     card.style.borderRadius = "12px";
     card.style.padding = "12px";
     card.style.flexShrink = "0";
+
+    const textoFormateado = mensaje
+      .split(/\n+/)
+      .map(p => `<p>${p.trim()}</p>`)
+      .join('') || `<p>${mensaje}</p>`;
+
     card.innerHTML = `
-      <p style="color:#c9d6e4; font-style:italic; margin-bottom:6px;">“${mensaje}”</p>
-      <p style="font-weight:bold; color:white;">- ${nombre}</p>
+      <div style="color:#c9d6e4; font-style:italic; margin-bottom:6px; overflow-wrap: break-word;">
+        ${textoFormateado}
+      </div>
+      <p style="font-weight:bold; color:white; margin-top:4px;">- ${nombre}</p>
     `;
     lista.prepend(card);
 
