@@ -35,7 +35,7 @@ form.addEventListener('submit', async (e) => {
     const res = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ data: { Nombre: nombre, Mensaje: mensaje } })
+body: JSON.stringify([{ Nombre: nombre, Mensaje: mensaje }])
     });
 
     if (!res.ok) throw new Error("Error al enviar mensaje");
