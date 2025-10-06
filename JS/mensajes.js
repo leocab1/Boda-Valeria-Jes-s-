@@ -12,8 +12,10 @@ async function cargarMensajes() {
       const card = document.createElement('div');
       card.className = 'card bg-[#1a2a3a] border border-[#b0c4de]/30 rounded-xl p-4 shadow-md w-64';
       card.innerHTML = `
-        <p class="mensaje text-gray-200 italic">“${msg.Mensaje}”</p>
-        <p class="font-bold text-[#b0c4de] mt-2">${msg.Nombre}</p>
+  <p class="font-bold text-[#b0c4de] mt-2">${nombre}</p>
+  <p class="mensaje text-gray-200 italic">“${mensaje}”</p>
+`;
+
       `;
       lista.appendChild(card);
     });
