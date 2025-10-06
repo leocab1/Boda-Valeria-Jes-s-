@@ -69,4 +69,10 @@
     loader.classList.add("hidden");
     content.classList.remove("hidden");
   }, 1500); 
+
+            document.addEventListener('DOMContentLoaded', () => {
+  const quote = document.getElementById('quote-container');
+  quote.classList.remove('opacity-0', 'translate-y-2'); // se activa la transición
+});
+
 });
