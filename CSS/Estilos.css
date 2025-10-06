@@ -413,21 +413,20 @@
     background: transparent; 
 }
 
-
-
-.quote-container {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: #b0c4de;
+  #quote-container {
     opacity: 0;
-    transition: opacity 1s ease-in-out;
-    margin-top: 1rem;
-}
+    transform: translateY(10px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #b0c4de;
+    margin-top: 20px;
+  }
 
-.quote-container.visible {
+  #quote-container.visible {
     opacity: 1;
-}
+    transform: translateY(0);
+  }
 
 
 
