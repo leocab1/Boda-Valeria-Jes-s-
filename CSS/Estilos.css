@@ -443,37 +443,53 @@
     100% { transform: scale(1); }
 }
 
-
 /* Ocultar scrollbar */
 #lista-dedicatorias::-webkit-scrollbar { display: none; }
 #lista-dedicatorias { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Scroll snap opcional */
+/* Scroll snap para que las cards encajen al scrollear */
 #lista-dedicatorias {
     scroll-snap-type: x mandatory;
 }
 
-/* Estilo de cada card */
+/* Card horizontal y responsive */
 .card-dedicatoria {
     min-width: 250px;       /* Ancho mínimo de la card */
-    max-width: 300px;       /* Para que no se haga gigante en pantallas grandes */
+    max-width: 300px;       /* Ancho máximo para no expandir demasiado */
     flex-shrink: 0;         /* Evita que se encoja */
     scroll-snap-align: start;
     background-color: #1a2a3a;
     color: #c9d6e4;
     border-radius: 1rem;
     padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    word-wrap: break-word;  /* Ajusta texto largo dentro de la card */
+    justify-content: flex-start;
+    word-wrap: break-word;  /* Ajusta texto largo */
+    white-space: pre-wrap;  /* Mantiene saltos de línea y párrafos */
+    line-height: 1.6;
+    transition: transform 0.3s;
 }
+
+/* Hover para dar efecto de zoom */
+.card-dedicatoria:hover {
+    transform: scale(1.05);
+}
+
+/* Nombre al final de la card */
 .card-dedicatoria .nombre {
     font-weight: bold;
     text-align: right;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    flex-shrink: 0;
 }
+
+/* Mensaje */
+.card-dedicatoria .mensaje {
+    flex-grow: 1;   /* Ocupa espacio restante */
+}
+
 
 
 
