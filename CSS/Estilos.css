@@ -491,35 +491,6 @@
 }
 
 
-/* Contenedor flotante de la música */
-.floating-ring {
-    position: fixed;
-    bottom: 30px;  /* distancia desde abajo */
-    right: 30px;   /* distancia desde la derecha */
-    width: 60px;
-    height: 60px;
-    background-color: #b0c4de; /* mismo color de tus íconos */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    cursor: pointer;
-    z-index: 9999;
-    transition: transform 0.2s ease;
-}
-
-.floating-ring:hover {
-    transform: scale(1.1);
-}
-
-#btn-audio-flotante {
-    color: #0d1a26; /* ícono en contraste con el fondo */
-    font-size: 28px;
-}
-
-
-
 
 /* Responsive */
 @media (max-width: 768px) {
