@@ -12,23 +12,34 @@ async function cargarMensajes() {
     data.reverse().forEach(msg => {
       const card = document.createElement('div');
       card.style.minWidth = "220px";
+      card.style.maxWidth = "250px";          // Limita ancho de la tarjeta
+      card.style.maxHeight = "220px";         // Limita altura
       card.style.backgroundColor = "#1a2a3a";
       card.style.border = "1px solid rgba(176,196,222,0.3)";
       card.style.borderRadius = "12px";
       card.style.padding = "12px";
       card.style.flexShrink = "0";
+      card.style.overflow = "hidden";         // Oculta exceso
+      card.style.display = "flex";
+      card.style.flexDirection = "column";
 
-      const textoFormateado = msg.Mensaje
-        .split(/\n+/)
-        .map(p => `<p>${p.trim()}</p>`)
-        .join('') || `<p>${msg.Mensaje}</p>`;
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.style.color = "#c9d6e4";
+      mensajeDiv.style.fontStyle = "italic";
+      mensajeDiv.style.flexGrow = "1";
+      mensajeDiv.style.overflowY = "auto";   // Scroll interno si es muy largo
+      mensajeDiv.style.wordWrap = "break-word";
+      mensajeDiv.style.marginBottom = "6px";
+      mensajeDiv.innerHTML = msg.Mensaje.split(/\n+/).map(p => `<p>${p.trim()}</p>`).join('');
 
-      card.innerHTML = `
-        <div style="color:#c9d6e4; font-style:italic; margin-bottom:6px; overflow-wrap: break-word;">
-          ${textoFormateado}
-        </div>
-        <p style="font-weight:bold; color:white; margin-top:4px;">- ${msg.Nombre}</p>
-      `;
+      const nombreP = document.createElement('p');
+      nombreP.style.fontWeight = "bold";
+      nombreP.style.color = "white";
+      nombreP.style.marginTop = "4px";
+      nombreP.textContent = `- ${msg.Nombre}`;
+
+      card.appendChild(mensajeDiv);
+      card.appendChild(nombreP);
       lista.appendChild(card);
     });
   } catch (err) {
@@ -57,29 +68,40 @@ form.addEventListener('submit', async (e) => {
 
     if (!res.ok) throw new Error("Error al enviar mensaje");
 
+    // Creamos la card de manera igual
     const card = document.createElement('div');
     card.style.minWidth = "220px";
+    card.style.maxWidth = "250px";
+    card.style.maxHeight = "220px";
     card.style.backgroundColor = "#1a2a3a";
     card.style.border = "1px solid rgba(176,196,222,0.3)";
     card.style.borderRadius = "12px";
     card.style.padding = "12px";
     card.style.flexShrink = "0";
+    card.style.overflow = "hidden";
+    card.style.display = "flex";
+    card.style.flexDirection = "column";
 
-    const textoFormateado = mensaje
-      .split(/\n+/)
-      .map(p => `<p>${p.trim()}</p>`)
-      .join('') || `<p>${mensaje}</p>`;
+    const mensajeDiv = document.createElement('div');
+    mensajeDiv.style.color = "#c9d6e4";
+    mensajeDiv.style.fontStyle = "italic";
+    mensajeDiv.style.flexGrow = "1";
+    mensajeDiv.style.overflowY = "auto";
+    mensajeDiv.style.wordWrap = "break-word";
+    mensajeDiv.style.marginBottom = "6px";
+    mensajeDiv.innerHTML = mensaje.split(/\n+/).map(p => `<p>${p.trim()}</p>`).join('');
 
-    card.innerHTML = `
-      <div style="color:#c9d6e4; font-style:italic; margin-bottom:6px; overflow-wrap: break-word;">
-        ${textoFormateado}
-      </div>
-      <p style="font-weight:bold; color:white; margin-top:4px;">- ${nombre}</p>
-    `;
+    const nombreP = document.createElement('p');
+    nombreP.style.fontWeight = "bold";
+    nombreP.style.color = "white";
+    nombreP.style.marginTop = "4px";
+    nombreP.textContent = `- ${nombre}`;
+
+    card.appendChild(mensajeDiv);
+    card.appendChild(nombreP);
     lista.prepend(card);
 
     form.reset();
-
   } catch (err) {
     console.error(err);
     alert("No se pudo enviar el mensaje");
