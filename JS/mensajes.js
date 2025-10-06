@@ -43,7 +43,7 @@ form.addEventListener('submit', async (e) => {
 
     if (!res.ok) throw new Error("Error al enviar mensaje");
 
-    await res.json(); // ✅ Solo se lee una vez la respuesta
+
 
     const card = document.createElement('div');
     card.className = 'card bg-[#1a2a3a] border border-[#b0c4de]/30 rounded-xl p-4 shadow-md w-64 animate-fade-in';
