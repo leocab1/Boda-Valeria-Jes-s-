@@ -7,19 +7,25 @@ async function cargarMensajes() {
     const res = await fetch(API_URL);
     const data = await res.json();
 
-    lista.innerHTML = ''; // Limpiar lista antes de mostrar
+    lista.innerHTML = ''; // limpiar lista
+
     data.reverse().forEach(msg => {
       const card = document.createElement('div');
-      card.className = 'card bg-[#1a2a3a] border border-[#b0c4de]/30 rounded-xl p-4 shadow-md w-64';
+      card.style.minWidth = "220px"; 
+      card.style.backgroundColor = "#1a2a3a";
+      card.style.border = "1px solid rgba(176,196,222,0.3)";
+      card.style.borderRadius = "12px";
+      card.style.padding = "12px";
+      card.style.flexShrink = "0"; 
       card.innerHTML = `
-        <p class="font-bold text-[#b0c4de] mt-2">${msg["Nombre "] || msg.Nombre}</p>
-        <p class="mensaje text-gray-200 italic">“${msg.Mensaje}”</p>
+        <p style="font-weight:bold; color:white; margin-bottom:6px;">${msg.Nombre}</p>
+        <p style="color:#c9d6e4; font-style:italic;">“${msg.Mensaje}”</p>
       `;
       lista.appendChild(card);
     });
   } catch (err) {
     console.error('Error al cargar mensajes:', err);
-    lista.innerHTML = '<p class="text-red-400">No se pudieron cargar los mensajes.</p>';
+    lista.innerHTML = '<p style="color:red;">No se pudieron cargar los mensajes.</p>';
   }
 }
 
@@ -38,17 +44,21 @@ form.addEventListener('submit', async (e) => {
     const res = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify([{ "Nombre ": nombre, "Mensaje": mensaje }])
+      body: JSON.stringify([{ Nombre: nombre, Mensaje: mensaje }])
     });
 
     if (!res.ok) throw new Error("Error al enviar mensaje");
 
-    // Mostrar inmediatamente el mensaje en pantalla
     const card = document.createElement('div');
-    card.className = 'card bg-[#1a2a3a] border border-[#b0c4de]/30 rounded-xl p-4 shadow-md w-64 animate-fade-in';
+    card.style.minWidth = "220px";
+    card.style.backgroundColor = "#1a2a3a";
+    card.style.border = "1px solid rgba(176,196,222,0.3)";
+    card.style.borderRadius = "12px";
+    card.style.padding = "12px";
+    card.style.flexShrink = "0";
     card.innerHTML = `
-      <p class="font-bold text-[#b0c4de] mt-2">${nombre}</p>
-      <p class="mensaje text-gray-200 italic">“${mensaje}”</p>
+      <p style="font-weight:bold; color:white; margin-bottom:6px;">${nombre}</p>
+      <p style="color:#c9d6e4; font-style:italic;">“${mensaje}”</p>
     `;
     lista.prepend(card);
 
@@ -60,4 +70,5 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
+// Cargar mensajes al inicio
 document.addEventListener('DOMContentLoaded', cargarMensajes);
