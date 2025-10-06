@@ -475,11 +475,7 @@
   overflow-wrap: break-word;
 }
 
-#lista-dedicatorias .card .mensaje {
-  flex-grow: 1;
-  overflow-y: auto;
-  margin-bottom: 1rem;
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {
