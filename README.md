@@ -1,3 +1,5 @@
+Proyecto: Invitación Digital Interactiva – Valeria & José
+
 Este proyecto consiste en una invitación digital interactiva desarrollada para Valeria y José, con el objetivo de ofrecer a sus invitados una experiencia moderna, práctica y memorable para confirmar asistencia, dejar dedicatorias y visualizar la información del evento de manera clara y elegante.
 
 Descripción del Proyecto
