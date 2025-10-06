@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="Img/anillos.png" type="image/x-icon">
+    <link rel="shortcut icon" href="" type="image/x-icon">
     <title>Valeria & José - Invitación de Boda</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -153,43 +153,41 @@
       allowfullscreen>
     </iframe>
   </div>
-</div>
+</div>}
 <div id="dedicatorias" class="section bg-gradient-to-b from-[#0d1a26] to-[#1a2a3a] py-16 text-center">
   <div class="flex flex-col items-center mb-12">
     <i class="fas fa-heart text-5xl text-[#b0c4de] mb-4 animate-pulse"></i>
     <h2 class="text-4xl font-bold text-[#b0c4de] mb-2">Deja tu Mensaje</h2>
-    <br>
     <p class="text-[#c9d6e4] text-justify px-4 md:px-12">
       Comparte tus buenos deseos y dedicatorias para los novios. ¡Se verán en tiempo real en nuestro muro!
     </p>
   </div>
 
- <form id="form-dedicatorias" class="flex flex-col items-center gap-4 mt-6">
-  <input 
-    type="text" 
-    id="nombre" 
-    placeholder="Tu nombre" 
-    required
-    class="w-80 p-2 rounded border border-gray-300 focus:outline-none"
-  />
+  <form id="form-dedicatorias" class="flex flex-col items-center gap-4 mt-6">
+    <input 
+      type="text" 
+      id="nombre" 
+      placeholder="Tu nombre" 
+      required
+      class="w-80 p-3 rounded border border-gray-300 focus:outline-none bg-white text-black placeholder-gray-500"
+    />
+    <textarea 
+      id="mensaje" 
+      placeholder="Escribe tu mensaje..." 
+      required
+      class="w-80 p-3 rounded border border-gray-300 h-24 focus:outline-none bg-white text-black placeholder-gray-500"
+    ></textarea>
+    <button 
+      type="submit" 
+      class="px-6 py-3 bg-[#b0c4de] text-[#0d1a26] font-bold rounded hover:bg-[#a1bcd9] transition"
+    >
+      Enviar mensaje 💌
+    </button>
+  </form>
 
-  <textarea 
-    id="mensaje" 
-    placeholder="Escribe tu mensaje..." 
-    required
-    class="w-80 p-2 rounded border border-gray-300 h-24 focus:outline-none"
-  ></textarea>
-
-  <button 
-    type="submit" 
-    class="px-6 py-2 bg-[#b0c4de] text-[#0d1a26] font-bold rounded hover:bg-[#a1bcd9] transition"
-  >
-    Enviar mensaje 💌
-  </button>
-</form>
-
-<!-- Lista donde se mostrarán los mensajes -->
-<div id="lista-dedicatorias" class="mt-10 flex flex-col gap-4 items-center"></div>
+  <div id="lista-dedicatorias" class="flex overflow-x-auto space-x-6 px-6 py-12 mt-12 scrollbar-hide">
+  </div>
+</div>
 
 <div id="asistencia" class="section text-center py-12">
   <i class="fas fa-check-circle section-icon" style="color:#b0c4de;"></i>
