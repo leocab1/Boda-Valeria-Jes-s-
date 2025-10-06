@@ -7,19 +7,19 @@ async function cargarMensajes() {
     const res = await fetch(API_URL);
     const data = await res.json();
 
-    lista.innerHTML = ''; // limpiar lista
+    lista.innerHTML = '';
 
     data.reverse().forEach(msg => {
       const card = document.createElement('div');
-      card.style.minWidth = "220px"; 
+      card.style.minWidth = "220px";
       card.style.backgroundColor = "#1a2a3a";
       card.style.border = "1px solid rgba(176,196,222,0.3)";
       card.style.borderRadius = "12px";
       card.style.padding = "12px";
-      card.style.flexShrink = "0"; 
+      card.style.flexShrink = "0";
       card.innerHTML = `
-        <p style="font-weight:bold; color:white; margin-bottom:6px;">${msg.Nombre}</p>
-        <p style="color:#c9d6e4; font-style:italic;">“${msg.Mensaje}”</p>
+        <p style="color:#c9d6e4; font-style:italic; margin-bottom:6px;">“${msg.Mensaje}”</p>
+        <p style="font-weight:bold; color:white;">- ${msg.Nombre}</p>
       `;
       lista.appendChild(card);
     });
@@ -57,8 +57,8 @@ form.addEventListener('submit', async (e) => {
     card.style.padding = "12px";
     card.style.flexShrink = "0";
     card.innerHTML = `
-      <p style="font-weight:bold; color:white; margin-bottom:6px;">${nombre}</p>
-      <p style="color:#c9d6e4; font-style:italic;">“${mensaje}”</p>
+      <p style="color:#c9d6e4; font-style:italic; margin-bottom:6px;">“${mensaje}”</p>
+      <p style="font-weight:bold; color:white;">- ${nombre}</p>
     `;
     lista.prepend(card);
 
@@ -70,5 +70,4 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-// Cargar mensajes al inicio
 document.addEventListener('DOMContentLoaded', cargarMensajes);
