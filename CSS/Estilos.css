@@ -444,7 +444,12 @@
 }
 
 
-
+  #lista-dedicatorias .card .nombre {
+    color: #fff; /* el nombre en blanco */
+    font-weight: bold;
+    margin-top: 6px;
+    display: block;
+  }
 
 
 
