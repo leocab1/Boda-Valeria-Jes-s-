@@ -40,7 +40,9 @@ body: JSON.stringify([{ Nombre: nombre, Mensaje: mensaje }])
 
     if (!res.ok) throw new Error("Error al enviar mensaje");
     const data = await res.json();
-    console.log("Mensaje enviado:", data);
+ const text = await res.text();
+console.log("Respuesta completa:", text);
+
 
     // Mostrar el mensaje recién enviado en pantalla
     const card = document.createElement('div');
