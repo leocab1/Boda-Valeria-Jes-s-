@@ -244,27 +244,40 @@
      Confirmar por WhatsApp
   </a>
 </div>
+</div>
 
-
-
-<footer class="footer bg-[#0d1a26] py-6">
-  <div class="footer-content flex flex-col items-center justify-center text-center text-[#b0c4de] space-y-1">
-    <p>© 2025 Valeria & José</p>
-    <p>Creado con ❤️ para un día inolvidable</p>
-  </div>
-</footer>
-
-<!-- BOTÓN FLOTANTE: Fuera de #content y antes del cierre de body -->
+    <!-- BOTÓN FLOTANTE: debe ir FUERA de #content, al final del <body> -->
 <div id="audio-ring-control" class="floating-ring">
     <div id="ring-container">
         <i id="btn-audio-flotante" class="fas fa-music"></i>
     </div>
 </div>
-<audio id="musicaFondo" src="https://res.cloudinary.com/dbwuz0iw8/video/upload/v1759368750/Morat_-_A_D%C3%B3nde_Vamos_Letra_Albert_Maricheli_btwy84.mp3" loop preload="auto"></audio>
 
+<!-- AUDIO DE FONDO -->
+<audio id="musicaFondo" 
+       src="https://res.cloudinary.com/dbwuz0iw8/video/upload/v1759368750/Morat_-_A_D%C3%B3nde_Vamos_Letra_Albert_Maricheli_btwy84.mp3" 
+       loop preload="auto">
+</audio>
 
+<!-- Script para controlar la música flotante -->
+<script>
+  const btnAudio = document.getElementById('btn-audio-flotante');
+  const musica = document.getElementById('musicaFondo');
+  let isPlaying = false;
 
-</div>
+  btnAudio.addEventListener('click', () => {
+      if (!isPlaying) {
+          musica.play();
+          btnAudio.parentElement.classList.add('is-playing'); // animación opcional
+          isPlaying = true;
+      } else {
+          musica.pause();
+          btnAudio.parentElement.classList.remove('is-playing');
+          isPlaying = false;
+      }
+  });
+</script>
+
 
         <script src="JS/script.js"></script>
          <script src="JS/mensajes.js"></script>
