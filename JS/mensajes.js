@@ -10,7 +10,7 @@ async function cargarMensajes() {
 
     data.reverse().forEach(msg => {
       const card = document.createElement('div');
-      card.className = 'card';
+      card.className = 'card flex flex-col min-w-[220px] max-w-[220px] bg-[#1f2c3a] rounded-xl p-4 shadow-lg text-[#e0e6ed] flex-shrink-0';
       card.innerHTML = `
         <p class="mensaje">“${msg.Mensaje}”</p>
         <p class="font-bold">${msg.Nombre}</p>
