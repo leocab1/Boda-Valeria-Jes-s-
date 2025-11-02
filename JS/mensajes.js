@@ -1,6 +1,6 @@
 const form = document.getElementById('form-dedicatorias');
 const lista = document.getElementById('lista-dedicatorias');
-const API_URL = "https://sheetdb.io/api/v1/turyrtjzajysy";
+const API_URL = "https://api.sheetbest.com/sheets/8da9de60-c7e5-461c-bb28-8cd6f68ea03e";
 
 function cargarMensajes() {
   fetch(API_URL)
