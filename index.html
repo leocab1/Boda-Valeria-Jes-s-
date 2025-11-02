@@ -227,9 +227,43 @@
     </button>
   </form>
 
-<div id="lista-dedicatorias" 
-     class="flex flex-nowrap gap-6 px-6 py-12 mt-12 overflow-x-auto scrollbar-hide">
+
+  <style>
+    .carrusel-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #101820;
+}
+.carrusel {
+  display: flex;
+  gap: 12px;
+}
+.card {
+  display: inline-block;
+  min-width: 200px;
+  max-width: 220px;
+  background: #1a2a3a;
+  border-radius: 12px;
+  padding: 12px;
+  color: #c9d6e4;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.card:hover { transform: scale(1.05); }
+.mensaje { font-size: 14px; font-style: italic; margin-bottom: 8px; }
+.font-bold { font-weight: bold; font-size: 13px; color: #b0c4de; text-align: right; }
+
+  </style>
+
+
+
+<div class="carrusel-container">
+  <div id="lista-dedicatorias" class="carrusel"></div>
 </div>
+
 
 
 <div id="asistencia" class="section text-center py-12">
