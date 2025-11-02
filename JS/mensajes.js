@@ -6,7 +6,7 @@ function cargarMensajes() {
   fetch(API_URL)
     .then(res => res.json())
     .then(json => {
-      const data = json.data; /
+      const data = json.data; 
       lista.innerHTML = '';
       data.reverse().forEach(msg => {
         const card = document.createElement('div');
